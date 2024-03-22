@@ -32,13 +32,9 @@ class Auto:
         elif self.kilometraje > 100000:
             print("!Ya dejame descansar por favor!")
 
-
-
-# Instanciando un objeto
-auto_Wilson = Auto("Toyota", "Corolla", 2022)
-auto_Wilson.mostrar_informacion()
-auto_Wilson.actualizar_kilometraje(15000)
-auto_Wilson.actualizar_kilometraje(20000)
-auto_Wilson.realizar_viajes(5000)
-auto_Wilson.realizar_viajes(-100)  
-auto_Wilson.estado_auto()
+    # Metodo estatico 
+    @staticmethod
+    def comparar_autos(auto1, auto2):
+        if auto1.kilometraje == auto2.kilometraje:
+            return "Tienen el mismo kilometraje"
+        return "Tienen diferente "
