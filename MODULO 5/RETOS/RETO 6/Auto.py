@@ -38,3 +38,22 @@ class Auto:
         if auto1.kilometraje == auto2.kilometraje:
             return "Tienen el mismo kilometraje"
         return "Tienen diferente "
+    
+    @classmethod
+    def toyota_auto(cls, kilometraje):
+         marca= "Toyota"
+         modelo= "Sail"
+         año= "2024"
+         return cls(marca,modelo,año,kilometraje)
+    
+    @classmethod
+    def autoAntiguo(cls, marca, modelo):
+        return cls(marca, modelo, 1990)
+    
+    @staticmethod
+    def validarAnio(anio):
+        if anio >= 2000 and anio <= 2024:
+            return "Es un auto de la decada de los 2000"
+        else:
+            return "Es un auto de la decada de los 90"
+    
