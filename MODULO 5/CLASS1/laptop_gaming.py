@@ -13,6 +13,9 @@ class Laptop_gaming(Laptop):
         resultado_juegos = self.realizar_diagnostico_juegos()
         resultado_diagnostico["Resultado juegos"] = resultado_juegos
         return resultado_diagnostico
+    
+    def __str__(self):
+        return f"Marca: {self.marca}, \n Procesador: {self.procesador}, \n Memoria: {self.memoria}, \n Tarjeta Grafica: {self.tarjeta_graf}, \n Costo: {self.costo},\n Impuesto: {self.impuesto}\n"
 
     def realizar_diagnostico_juegos(self):
         juegos = ["FORNITE", "COD", "GTA"]
@@ -28,5 +31,15 @@ class Laptop_gaming(Laptop):
 
             resultados [juego] = f"{fps} FPS" 
         return resultados
+    
+    def realizar_informe_uso(self):
+        informe = super().realizar_informe_uso()
+        informe.update({
+            "Tipo" : "Gaming",
+            "Uso Recomendado" : "Juegos de video",
+            "Horas de uso" : 10,
+            "Recomendaciones de Software" : ["Antivirus", "VPN"]
+        })
+        return informe
 
     pass
